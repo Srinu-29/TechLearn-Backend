@@ -6,10 +6,11 @@ const midProjectRoutes = require("./routes/midProjectRoutes");
 const UserRoutes = require("./routes/userRoute");
 const uiLibraryRoutes = require("./routes/uiLibraryRoutes");
 const DBconnect = require('./config/db');
+const transactionRoutes = require("./routes/transactionRoutes");
 
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 
 DBconnect();
 
@@ -18,6 +19,7 @@ DBconnect();
 app.use(UserRoutes);
 app.use(midProjectRoutes);
 app.use(uiLibraryRoutes);
+app.use(transactionRoutes);
 
 
 

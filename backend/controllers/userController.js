@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs'); // Import bcrypt
+const sendMail = require('../utils/mailer');
 
 const generatorToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -84,4 +85,5 @@ exports.login = async (req, res) => {
     console.error('Login Error:', error);
     res.status(500).json({ message: 'Server Error' });
   }
+
 };

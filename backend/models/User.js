@@ -26,6 +26,10 @@ const userSchema = new mongoose.Schema(
         isClub: { 
             type: Boolean,
             default: false
+        },
+        transactionId: {
+            type: String,
+            default: null
         }
     },
     {timestamps:true}

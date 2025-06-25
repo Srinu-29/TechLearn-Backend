@@ -44,6 +44,27 @@ Content-Type: application/json
   "isClub": true
 }
 
+### Registering Another User
+POST http://localhost:4000/register
+Content-Type: application/json
+
+{
+  "firstName": "Bob",
+  "lastName": "Lee",
+  "email": "bob.lee@example.com",
+  "password": "BobPass123",
+  "confirmPassword": "BobPass123"
+}
+
+### Another User Login
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+  "email": "bob.lee@example.com",
+  "password": "BobPass123"
+}
+
 ### Getting Projects
 GET  http://localhost:4000/build/mid-projects
 
@@ -53,8 +74,31 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTNmMTdjY
 
 ###  Premium User or Club member
 GET  http://localhost:4000/build/mid-project/6853036c48df175f16f94926
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTQ1MDEwZTdjYzZiZjhjMDE4ODczNSIsImlhdCI6MTc1MDM1NTk4NCwiZXhwIjoxNzUwOTYwNzg0fQ.VM0KjrYHSZTZrTKuviVTJyZSoJg5JK8y4B1H73S0Jag
-### Ui Library
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMzMjY0Y2ZiMTc5OTgyODdkMGZjNSIsImlhdCI6MTc1MDg3NjQ3NCwiZXhwIjoxNzUxNDgxMjc0fQ.fbzQ7Clhuo7458uJqUmU6rmdecotfctZErhlPZBkWho
+###
 GET http://localhost:4000/ui-library
+
+
+### Submitting Transaction ID
+POST http://localhost:4000/submit-transaction
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMzMjY0Y2ZiMTc5OTgyODdkMGZjNSIsImlhdCI6MTc1MDg3NjQ3NCwiZXhwIjoxNzUxNDgxMjc0fQ.fbzQ7Clhuo7458uJqUmU6rmdecotfctZErhlPZBkWho
+
+{
+  "email": "bob.lee@example.com",
+  "transactionId": "SOME_TRANSACTION_ID",
+  "immediateAccess": true
+}
+
+###
+GET http://localhost:4000/admin/club/transactions
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTQ1MDEwZTdjYzZiZjhjMDE4ODczNSIsImlhdCI6MTc1MDM1NTk4NCwiZXhwIjoxNzUwOTYwNzg0fQ.VM0KjrYHSZTZrTKuviVTJyZSoJg5JK8y4B1H73S0Jag
+
+### Admin Rejection Endpoint
+POST http://localhost:4000/admin/club/reject
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTQ1MDEwZTdjYzZiZjhjMDE4ODczNSIsImlhdCI6MTc1MDM1NTk4NCwiZXhwIjoxNzUwOTYwNzg0fQ.VM0KjrYHSZTZrTKuviVTJyZSoJg5JK8y4B1H73S0Jag
+
+{
+  "transactionId": "SOME_TRANSACTION_ID"
+}

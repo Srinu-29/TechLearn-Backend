@@ -1,0 +1,60 @@
+### Normal user login
+POST   http://localhost:4000/login
+Content-Type: application/json
+
+{
+  "email": "alice.smith@example.com",
+  "password": "AlicePass456"
+}
+
+### clubmember Login
+POST http://localhost:4000/login
+Content-Type: application/json
+
+{
+  "email": "priya.kumar@example.com",
+  "password": "PriyaPass789"
+}
+
+
+###  registering a Normal User
+
+POST http://localhost:4000/register
+Content-Type: application/json
+
+{
+  "firstName": "Alice",
+  "lastName": "Smith",
+  "email": "alice.smith@example.com",
+  "password": "AlicePass456",
+  "confirmPassword": "AlicePass456"
+}
+
+### Registering Club Member
+
+POST http://localhost:4000/register
+Content-Type: application/json
+
+{
+  "firstName": "Priya",
+  "lastName": "Kumar",
+  "email": "priya.kumar@example.com",
+  "password": "PriyaPass789",
+  "confirmPassword": "PriyaPass789",
+  "isClub": true
+}
+
+### Getting Projects
+GET  http://localhost:4000/build/mid-projects
+
+### Normal User
+GET  http://localhost:4000/build/mid-project/6853036c48df175f16f94926
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTNmMTdjY2Q4NWZmZjcxNTFhNDdkMiIsImlhdCI6MTc1MDM0MTQwNywiZXhwIjoxNzUwOTQ2MjA3fQ.vm7s59jgKCApm6KHaJUZTIe42QiSYJYaacm-vhyMq2E
+
+###  Premium User or Club member
+GET  http://localhost:4000/build/mid-project/6853036c48df175f16f94926
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTQ1MDEwZTdjYzZiZjhjMDE4ODczNSIsImlhdCI6MTc1MDM1NTk4NCwiZXhwIjoxNzUwOTYwNzg0fQ.VM0KjrYHSZTZrTKuviVTJyZSoJg5JK8y4B1H73S0Jag
+### Ui Library
+
+GET http://localhost:4000/ui-library
+Content-Type: application/json

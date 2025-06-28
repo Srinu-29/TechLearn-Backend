@@ -86,11 +86,11 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NWMzMjY0Y
 
 {
   "email": "bob.lee@example.com",
-  "transactionId": "SOME_TRANSACTION_ID",
+  "transactionId": "SOME_TRANSACTION_ID"b,
   "immediateAccess": true
 }
 
-###
+### transactions List
 GET http://localhost:4000/admin/club/transactions
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4NTQ1MDEwZTdjYzZiZjhjMDE4ODczNSIsImlhdCI6MTc1MDM1NTk4NCwiZXhwIjoxNzUwOTYwNzg0fQ.VM0KjrYHSZTZrTKuviVTJyZSoJg5JK8y4B1H73S0Jag
 
